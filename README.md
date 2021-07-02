@@ -8,6 +8,9 @@ https://www.youtube.com/playlist?list=PLqnslRFeH2Upcrywf-u2etjdxxkL8nl7E
 ## Linear Regression
 + linear_Regression.py
 
+## Logistic Regression
++ logisticregression.py
+
 ## Clustering
 ### Kmeans
 + kmeans.py
