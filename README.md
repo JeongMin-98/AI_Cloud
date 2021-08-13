@@ -15,6 +15,7 @@ Use implemented code for dataset.
 ## Logistic Regression
 + logisticregression.py
 
+## Support vector machine(SVM)
 ## Clustering
 ### Kmeans
 + kmeans.py
