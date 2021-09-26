@@ -1,3 +1,4 @@
+
 import time
 class State:
     def __init__(self, board, goal, moves=0):
@@ -37,7 +38,7 @@ class State:
 start = time.time()
 
 print()
-puzzle = [1, 2, 3, 0, 4, 6, 7, 5, 8]
+puzzle = [1, 2, 3, 8, 0, 4, 7, 6, 5]
 goal = [1, 2, 3, 4, 5, 6, 7, 8, 0]
 
 open_queue = []
@@ -45,8 +46,28 @@ open_queue.append(State(puzzle, goal, moves=0))
 
 closed_queue = []
 moves = 0
+# ## DFS(너비우선탐색)
+# while len(open_queue) != 0:
+#     current = open_queue.pop()
+#     print(current)
+#     if current.board == goal:
+#         print("탐색 성공")
+#         break
+#     moves = current.moves+1
+#     closed_queue.append(current)
+#
+#     for state in current.expand(moves):
+#         if state in closed_queue:
+#             continue
+#         else:
+#             open_queue.append(state)
+#
+# print("time : ", time.time() - start)
+
+## BFS(너비우선탐색)
+
 while len(open_queue) != 0:
-    current = open_queue.pop()
+    current = open_queue.pop(0)
     print(current)
     if current.board == goal:
         print("탐색 성공")
