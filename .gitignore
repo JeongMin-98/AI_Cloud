@@ -7,7 +7,10 @@
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 #DKU file
 [DKU]DeepLearning_Cloud/DC_practice.py
+[DKU]DeepLearning_Cloud/DC_practice_2.py
 
+## Dataset
+[DKU]DeepLearning_Cloud/기말과제/dataset2/
 # User-specific stuff
 .idea
 .idea/**/workspace.xml
