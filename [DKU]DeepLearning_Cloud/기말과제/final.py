@@ -1,8 +1,14 @@
 
+"""
+    딥러닝/클라우드 기말 과제
+    32170939 김정민
+    jeongmin981@gmail.com
 
-## 딥러닝/클라우드 기말 과제
-## 32170939 김정민
-## jeongmin981@gmail.com
+    참고자료
+    tensorflow.org
+
+"""
+
 
 import matplotlib.pyplot as plt
 import numpy as np
