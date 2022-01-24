@@ -16,6 +16,8 @@
 [DKU]DeepLearning_Cloud/*.png
 [DKU]DeepLearning_Cloud/*.txt
 
+NAVER_AI_STUDY/data-01-test-score.csv
+
 exportToHTML/
 
 *.csv
