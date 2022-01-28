@@ -32,3 +32,27 @@ print(abc)
 """
 False
 """
+
+
+"""
+    python의 클래스 생성자는 자바의 생성자처럼 여러개 생성 가능?
+    
+"""
+
+class Foo:
+
+    def __init__(self, *args):
+        if len(args) > 1:
+            self.ans = 0
+            for i in args:
+                self.ans += i
+
+        elif isinstance(args[0], int):
+            self.ans = args[0]*args[0]
+        elif isinstance(args[0], str):
+            self.ans = "hello! :"+ args[0] + "."
+
+
+f1 = Foo(1,2,3,4,5)
+f2 = Foo(5)
+f3 = Foo("world")
