@@ -28,7 +28,8 @@ Linked lists are among the simplest and most common data structures.
 can be used to implement several other common abstract data types, including lists, statcks, queues, associative arrays,
 and S-experssions.
 
-
+reference by wikipedia
+https://en.wikipedia.org/wiki/Linked_list
 """
 
 
