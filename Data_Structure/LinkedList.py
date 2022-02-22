@@ -19,7 +19,7 @@ over a conventional array is that the list elements can be easily inserted or re
 of the entire structure becaurse the data items need not be stored contiguously in memory or on disk
 
 ### Disadvantages
-Acess time is linear time and difficult to pipeline
+AAcess time is linear time and difficult to pipeline
 Arrays have better cache locality compared to linked lists.
 do not allow random access to the data or any form of efficient indexing, many basic operations.
 
