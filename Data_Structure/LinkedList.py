@@ -53,6 +53,82 @@ class SingleLinkedList:
                 print(temp.data)
                 temp = temp.next
 
+    def add_first(self, node):
+
+        if self.head is None:
+            self.head = Node
+
+        else:
+            temp = self.head
+            self.head = node
+            self.head.next = temp
+
+    def add_last(self, node):
+        """
+        Linked list add node at last.
+        :param node:
+        :return:
+        """
+
+        temp = self.head
+        while temp.next is not None:
+            temp = temp.next
+
+        temp.next = node
+
+    def delete_node(self, data):
+
+        if self.head.next is None:
+            print("empty Linked List")
+            return
+
+        temp = self.head
+
+        if temp.data == data:
+            self.head = temp.next
+            del temp
+            return
+
+        while temp.data != data:
+            before = temp
+            temp = temp.next
+
+        if temp.next is None:
+            del temp
+            before.next = None
+
+        else:
+            before.next = temp.next
+            del temp
+
+
+
+
+
+
+
+e1 = Node("hello")
+e2 = Node("world")
+e3 = Node("add first")
+e4 = Node("add Last")
+
+LList = SingleLinkedList()
+
+LList.head = e1
+LList.head.next = e2
+LList.linked_list_print()
+
+LList.add_first(e3)
+LList.linked_list_print()
+
+LList.add_last(e4)
+LList.linked_list_print()
+
+LList.delete_node("add first")
+LList.linked_list_print()
+
+
+
 
 
 
