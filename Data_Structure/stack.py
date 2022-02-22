@@ -2,7 +2,7 @@
 Stack
 1. abstract data type that serves as a collection of elements
 2. linear data structure
-3. makes it possible to implement a statck as a singly linked list and a pointer to the top
+3. makes it possible to implement a stack as a singly linked list and a pointer to the top
 
 ## with two main principal operations
 1. Push: adds an element to the collection
