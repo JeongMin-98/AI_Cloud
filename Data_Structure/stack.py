@@ -26,13 +26,13 @@ method
 init, push, pop, peek
 
 python's built in data structure list can be used as stack
-
+===============================================================
 Stack in Python can be implemented using the following ways:
 
 list
 Collections.deque
 queue.LifoQueue
-
+================================================================
 reference by wikipedia
 https://en.wikipedia.org/wiki/Stack_(abstract_data_type)
 reference by geeksforgeeks
