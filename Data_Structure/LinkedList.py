@@ -76,7 +76,7 @@ class SingleLinkedList:
 
         temp.next = node
 
-    def delete_node(self, data):
+    def delete_node(self, key):
 
         if self.head.next is None:
             print("empty Linked List")
@@ -84,12 +84,12 @@ class SingleLinkedList:
 
         temp = self.head
 
-        if temp.data == data:
+        if temp.data == key:
             self.head = temp.next
             del temp
             return
 
-        while temp.data != data:
+        while temp.data != key:
             before = temp
             temp = temp.next
 
