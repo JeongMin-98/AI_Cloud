@@ -15,20 +15,20 @@ each noed contains: data and a reference ( in other words, a link) to the next n
 
 ### Advantages
 allows for efficient insertion or removal of elements from any position in the sequence during iterations
-over a conventional array is that the list elements can be easily inserted or removed without reallocation or reorganization
-of the entire structure becaurse the data items need not be stored contiguously in memory or on disk
+over a conventional array is that the list elements can be easily inserted or removed without reallocation or
+reorganization of the entire structure because the data items need not be stored contiguously in memory or on disk
 
 ### Disadvantages
-AAcess time is linear time and difficult to pipeline
+Access time is linear time and difficult to pipeline
 Arrays have better cache locality compared to linked lists.
 do not allow random access to the data or any form of efficient indexing, many basic operations.
 
 
 Linked lists are among the simplest and most common data structures.
-can be used to implement several other common abstract data types, including lists, statcks, queues, associative arrays,
-and S-experssions.
+can be used to implement several other common abstract data types, including lists, stacks, queues, associative arrays,
+and S-expressions.
 
-reference by wikipedia
+reference by wiki
 https://en.wikipedia.org/wiki/Linked_list
 """
 
