@@ -39,3 +39,76 @@ reference by geeksforgeeks
 https://www.geeksforgeeks.org/stack-in-python/?ref=lbp
 
 """
+
+# 1. stack
+"""
+if the stack grows bigger than the block of memory that currently holds it,
+then Python needs to do some memory allocations
+"""
+
+stack = []
+
+stack.append(1)
+stack.append(2)
+stack.append(3)
+
+print(stack.pop())
+
+"""
+append => push => O(1)
+pop() => pop => O(n)
+pop() Last in First out 
+"""
+
+
+# 2. deque
+"""
+Deque is preferred over the list in the case where we need quicker append and pop operations 
+from both the ends of the container
+
+In deque
+pop and append O(1) time
+
+"""
+
+from collections import deque
+
+stack = deque()
+
+stack.append(1)
+stack.append(2)
+stack.append(3)
+
+print(stack)
+
+print(stack.pop())
+print(stack.pop())
+print(stack.pop())
+
+print(stack)
+
+# LifoQueue
+"""
+Queue module has a LIFO queue, which is basically a stack
+Data is inserted into Queue using the put() and get() takes data out from the queue
+
+"""
+
+from queue import LifoQueue
+
+stack = LifoQueue(maxsize=3)
+
+print(stack.qsize())
+
+stack.put(1)
+stack.put(2)
+stack.put(3)
+
+print(stack.full())
+print(stack.qsize())
+
+print(stack.get())
+print(stack.get())
+print(stack.get())
+
+print(stack.empty())
