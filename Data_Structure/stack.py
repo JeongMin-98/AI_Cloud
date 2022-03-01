@@ -112,3 +112,92 @@ print(stack.get())
 print(stack.get())
 
 print(stack.empty())
+
+"""
+Implementation using singly linked list:
+The linked list has two methods addHead(item) and removeHead(). 
+two methods run in constant time -> O(1)
+
+getSize()
+isEmpty()
+peek()
+push(value)
+pop()
+
+"""
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class Stack:
+
+    def __init__(self):
+        self.head = Node("head")
+        self.size = 0
+
+    def __str__(self):
+
+
+    def getsize(self):
+        """
+        get stack size
+        :return: print stack size
+        """
+        return self.size
+
+    def is_empty(self):
+        """
+        if stack is empty, return True
+        :return: return bool
+        """
+        if self.size == 0:
+            return True
+        else:
+            return False
+
+    def peek(self):
+        """
+        get the top data of the stack without delete
+        :return: top data
+        """
+        if self.is_empty():
+            print("stack is empty!!!")
+        else:
+            return self.head.next.data
+
+    def push(self, data):
+        """
+        insert item at the top of the stack
+        :param data:
+        :return:
+        """
+        node = Node(data)
+        node.next = self.head.next
+        self.head.next = node
+        self.size += 1
+
+        return
+
+    def pop(self):
+        """
+        get item at the top of the stack
+        :return:
+        """
+
+        if self.is_empty():
+            print("Stack is empty")
+        else:
+            popitem = self.head.next
+            self.head.next = self.head.next.next
+            self.size -= 1
+            return popitem
+
+stack = Stack()
+for i in range(1,11):
+    stack.push(i)
+
+for _ in range(1,6):
+    popitem=stack.pop()
+    print(popitem.data)
