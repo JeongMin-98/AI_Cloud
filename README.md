@@ -25,6 +25,8 @@ Use implemented code for dataset.
 ### Kmeans
 + kmeans.py
 
-
-# NAVER AI STUDY
-1월 13일 - 1주차 미션
+# Image Classification - paper
+# CNN
+## ReLU
+## Pooling layers (overlapping vs traditional)
++ model have overlapping layer, model have better accuracy and more difficult to overfit.
