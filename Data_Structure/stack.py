@@ -137,7 +137,7 @@ class Stack:
         self.head = Node("head")
         self.size = 0
 
-    def __str__(self):
+    # def __str__(self):
 
 
     def getsize(self):
