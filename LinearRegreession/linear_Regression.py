@@ -30,4 +30,3 @@ class LinearRegression:
     def predict(self, x):
         y_approximated = np.dot(x, self.weights) + self.bias
         return y_approximated
-
