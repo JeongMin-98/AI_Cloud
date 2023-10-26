@@ -23,7 +23,7 @@ exportToHTML/
 *.dot
 
 ## Dataset
-[DKU]DeepLearning_Cloud/기말과제/dataset2/../*.jpg
+[DKU]DeepLearning_Cloud/기말과제/dataset2/
 # User-specific stuff
 .idea
 .idea/**/workspace.xml
