@@ -10,7 +10,6 @@ from io import BytesIO
 # 500 서버 에러
 
 vision_base_url = 'https://danuser6computervision.cognitiveservices.azure.com/vision/v2.0/'
-subscription_key = 'f27fa5378bb74f85be0052f03112edc1'
 
 vision_base_url += 'analyze'
 
