@@ -1,6 +1,3 @@
-import numpy as np
-from PIL import Image
-
 from datasetloader import CustomImageDataSet
 from showImage.utils import *
 
