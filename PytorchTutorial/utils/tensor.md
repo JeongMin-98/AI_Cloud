@@ -22,7 +22,7 @@ PyTorch의 Tensors는 다양한 연산을 지원하며, 텐서간의 산술 연�
 ```python
 import torch
 
-# Python 리스트로부터 Tensor 생성
+# Python 리스트로부터 utils 생성
 data = [1, 2, 3, 4, 5]
 tensor = torch.Tensor(data)
 ```
@@ -38,10 +38,10 @@ x_np = torch.from_numpy(np_array)
 
 ```python
 x_ones = torch.ones_like(x_data) # retains the properties of x_data
-print(f"Ones Tensor: \n {x_ones} \n")
+print(f"Ones utils: \n {x_ones} \n")
 
 x_rand = torch.rand_like(x_data, dtype=torch.float) # overrides the datatype of x_data
-print(f"Random Tensor: \n {x_rand} \n")
+print(f"Random utils: \n {x_rand} \n")
 ```
 
 ### 랜덤 값 또는 상수 값 Tensor 생성하기
@@ -52,9 +52,9 @@ rand_tensor = torch.rand(shape)
 ones_tensor = torch.ones(shape)
 zeros_tensor = torch.zeros(shape)
 
-print(f"Random Tensor: \n {rand_tensor} \n")
-print(f"Ones Tensor: \n {ones_tensor} \n")
-print(f"Zeros Tensor: \n {zeros_tensor}")
+print(f"Random utils: \n {rand_tensor} \n")
+print(f"Ones utils: \n {ones_tensor} \n")
+print(f"Zeros utils: \n {zeros_tensor}")
 ```
 
 ## Tensor의 속성
@@ -91,16 +91,16 @@ PyTorch의 Tensors는 다양한 연산을 지원합니다. 다음은 Tensor의 �
 Tensor 간의 산술 연산은 일반적인 수학 연산과 동일한 방식으로 수행됩니다. 예를 들어, 덧셈, 뺄셈, 곱셈, 나눗셈 연산을 수행할 수 있습니다.
 
 ```python
-# Tensor 덧셈 연산
+# utils 덧셈 연산
 result = tensor1 + tensor2
 
-# Tensor 뺄셈 연산
+# utils 뺄셈 연산
 result = tensor1 - tensor2
 
-# Tensor 곱셈 연산
+# utils 곱셈 연산
 result = tensor1 * tensor2
 
-# Tensor 나눗셈 연산
+# utils 나눗셈 연산
 result = tensor1 / tensor2
 
 ```
