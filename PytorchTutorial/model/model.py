@@ -2,7 +2,6 @@ import os
 import torch
 from torch import nn
 
-
 def check_device():
     device = (
         "cuda"
@@ -51,3 +50,4 @@ if __name__ == "__main__":
     print(f"Shape of tensor: {output.shape}")
     print(f"Datatype of tensor: {output.dtype}")
     print(f"Device tensor is stored on: {output.device}")
+
