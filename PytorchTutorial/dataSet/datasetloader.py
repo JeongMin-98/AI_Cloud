@@ -19,7 +19,7 @@ class CustomImageDataSet(Dataset):
         image = read_image(img_path)
         label = self.img_labels.iloc[idx, 1]
         if self.transform:
-            image = self.transform(image)
+            image, label = self.transform([image, label])
         if self.target_transform:
             label = self.target_transform(label)
 

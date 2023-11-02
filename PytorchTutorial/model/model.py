@@ -30,7 +30,7 @@ class MyCNN(nn.Module):
             nn.Conv2d(in_channels=32, out_channels=64, kernel_size=(3, 3), padding_mode="zeros"),
             nn.ReLU(),
             nn.MaxPool2d(kernel_size=(2, 2)),
-            nn.Flatten(start_dim=1),
+            nn.Flatten(start_dim=0),
             nn.Linear(in_features=73984, out_features=512),
             nn.ReLU(),
             nn.Linear(in_features=512, out_features=4),
