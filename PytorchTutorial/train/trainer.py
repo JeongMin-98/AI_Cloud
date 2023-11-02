@@ -24,5 +24,6 @@ class Trainer:
             loss = self.criterion(output, target)
             loss.backward()
             self.optimizer.step()
-            print("Train Epoch : {} [{} / {} (:.0f}%)]\tLoss: {:.6f}".format(
-                epoch, batch_idx * len(data), len(self.train_loader), 100. * batch_idx / len(self.train_loader), loss.item())
+            print("Train Epoch : {} [{} / {} {:.0f}%)]\tLoss: {:.6f}".format(
+                epoch, batch_idx * len(data), len(self.train_loader), 100. * batch_idx / len(self.train_loader),
+                loss.item()))
