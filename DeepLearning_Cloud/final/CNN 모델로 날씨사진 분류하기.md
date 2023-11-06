@@ -199,7 +199,7 @@ history = model.fit(
   epochs=epochs
 )
 
-tf.saved_model.save(model, 'C:\\Users\\jeong\\Desktop\\정민\\3학년 2학기\\[DKU]딥러닝_클라우드\\기말과제\\model')
+tf.saved_model.save(model, 'C:\\Users\\jeong\\Desktop\\정민\\3학년 2학기\\[DKU]딥러닝_클라우드\\final\\model')
 ```
 
 ![Untitled](%E1%84%83%E1%85%B5%E1%86%B8%E1%84%85%E1%85%A5%E1%84%82%E1%85%B5%E1%86%BC%20%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A1%E1%84%8B%E1%85%AE%E1%84%83%E1%85%B3%20%E1%84%80%E1%85%B5%E1%84%86%E1%85%A1%E1%86%AF%E1%84%80%E1%85%AA%E1%84%8C%E1%85%A6%20-%20%E1%84%89%E1%85%A1%E1%84%8C%E1%85%B5%E1%86%AB%20%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%20%E1%84%87%E1%85%AE%E1%86%AB%E1%84%85%E1%85%B2%E1%84%92%E1%85%A1%20f2c9ba12b25e4046aab2669107a8099e/Untitled%208.png)
@@ -243,8 +243,8 @@ tf.random.set_seed(123)
         
 """
 
-data_dir = Path('[DKU]DeepLearning_Cloud/기말과제/dataset2')
-data_dir = Path('C:\\Users\\jeong\\PycharmProjects\\ML_algorithm\\[DKU]DeepLearning_Cloud/기말과제/dataset2')
+data_dir = Path('DeepLearning_Cloud/final/dataset2')
+data_dir = Path('C:\\Users\\jeong\\PycharmProjects\\ML_algorithm\\DeepLearning_Cloud/final/dataset2')
 
 image_list = list(data_dir.glob('*/*'))
 print('이미지의 개수 : {}'.format(len(image_list)))
@@ -438,5 +438,5 @@ plt.legend(loc='upper right')
 plt.title('Training and Validation Loss')
 plt.show()
 
-tf.saved_model.save(model, 'C:\\Users\\jeong\\Desktop\\정민\\3학년 2학기\\[DKU]딥러닝_클라우드\\기말과제\\model')
+tf.saved_model.save(model, 'C:\\Users\\jeong\\Desktop\\정민\\3학년 2학기\\[DKU]딥러닝_클라우드\\final\\model')
 ```

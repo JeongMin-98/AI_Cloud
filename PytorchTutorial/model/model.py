@@ -34,13 +34,13 @@ class MyCNN(nn.Module):
             nn.Linear(in_features=73984, out_features=512),
             nn.ReLU(),
             nn.Linear(in_features=512, out_features=4),
-            nn.Softmax(0),
+            # nn.Softmax(0),
         )
 
     def forward(self, x):
         x = self.layer(x)
+        x = torch.log_softmax(x, dim=0)
         return x
-
 
 
 if __name__ == "__main__":
