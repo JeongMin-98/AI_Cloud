@@ -13,7 +13,7 @@ from sklearn.model_selection import train_test_split
 
 # lstat => 독립변수, medv 종속변수
 
-BostonHousing = pd.read_csv("[DKU]DeepLearning_Cloud\BostonHousing.csv")
+BostonHousing = pd.read_csv("DeepLearning_Cloud\BostonHousing.csv")
 
 lstat = BostonHousing["lstat"]
 medv = BostonHousing["medv"]
@@ -69,7 +69,7 @@ print('Mean Squared error: {0:.2f}'.format(mean_squared_error(pred_y, df_y)))
 # Q10. gre,  gpa, rank를 가지고 합격여부를 예측하는 logistic regression 모델을 만드시오.
 # (train, test를 나누되 test 의 비율은 30% 로 하고 random_state 는 1234 로 한다)
 
-ucla_admit = pd.read_csv('[DKU]DeepLearning_Cloud\_ucla_admit.csv')
+ucla_admit = pd.read_csv('DeepLearning_Cloud\_ucla_admit.csv')
 
 df_ucla_X = ucla_admit[['gre','gpa','rank']]
 df_ucla_y = ucla_admit['admit']
@@ -101,7 +101,7 @@ print(Logistic_model.predict(admit_example))
 # Q13.이번에는 gre,  gpa만 가지고 합격 여부를 예측하는 모델을 만드시오
 # (train, test를 나누되 test 의 비율은 30% 로 하고 random_state 는 1234 로 한다)
 
-ucla_admit = pd.read_csv('[DKU]DeepLearning_Cloud\_ucla_admit.csv')
+ucla_admit = pd.read_csv('DeepLearning_Cloud\_ucla_admit.csv')
 
 df_ucla_2_X = ucla_admit[['gre','gpa']]
 df_ucla_2_y = ucla_admit['admit']

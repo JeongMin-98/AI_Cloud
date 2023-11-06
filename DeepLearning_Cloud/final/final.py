@@ -36,8 +36,8 @@ tf.random.set_seed(123)
         
 """
 
-data_dir = Path('[DKU]DeepLearning_Cloud/기말과제/dataset2')
-data_dir = Path('C:\\Users\\jeong\\PycharmProjects\\ML_algorithm\\[DKU]DeepLearning_Cloud/기말과제/dataset2')
+data_dir = Path('DeepLearning_Cloud/final/dataset2')
+data_dir = Path('C:\\Users\\jeong\\PycharmProjects\\ML_algorithm\\DeepLearning_Cloud/final/dataset2')
 
 image_list = list(data_dir.glob('*/*'))
 print('이미지의 개수 : {}'.format(len(image_list)))
@@ -238,4 +238,4 @@ plt.legend(loc='upper right')
 plt.title('Training and Validation Loss')
 plt.show()
 
-tf.saved_model.save(model, 'C:\\Users\\jeong\\Desktop\\정민\\3학년 2학기\\[DKU]딥러닝_클라우드\\기말과제\\model')
+tf.saved_model.save(model, 'C:\\Users\\jeong\\Desktop\\정민\\3학년 2학기\\[DKU]딥러닝_클라우드\\final\\model')

@@ -1,5 +1,5 @@
 import pandas as pd
-cars = pd.read_csv("[DKU]DeepLearning_Cloud\cars.csv")
+cars = pd.read_csv("DeepLearning_Cloud\cars.csv")
 
 
 

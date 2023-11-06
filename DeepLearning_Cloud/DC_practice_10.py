@@ -24,7 +24,7 @@ epoch 는 20,40,60,80 으로 변화시켜 가면서 테스트한다.
 각 training accuracy 와 validation accuracy 학습곡선 그래프를 제시한다
 """
 
-# df = pd.read_csv("[DKU]DeepLearning_Cloud\PimaIndiansDiabetes.csv", encoding='cp949')
+# df = pd.read_csv("DeepLearning_Cloud\PimaIndiansDiabetes.csv", encoding='cp949')
 df = pd.read_csv('PimaIndiansDiabetes.csv')
 dataset = df.values
 X = dataset[:, :-1].astype(float)

@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.model_selection import cross_val_score
 import pandas as pd
 
-df = pd.read_csv("[DKU]DeepLearning_Cloud\PimaIndiansDiabetes.csv")
+df = pd.read_csv("DeepLearning_Cloud\PimaIndiansDiabetes.csv")
 
 print(df.columns)
 
@@ -46,7 +46,7 @@ from sklearn import svm
 from sklearn.model_selection import cross_val_score
 import pandas as pd
 
-df = pd.read_csv("[DKU]DeepLearning_Cloud\PimaIndiansDiabetes.csv")
+df = pd.read_csv("DeepLearning_Cloud\PimaIndiansDiabetes.csv")
 
 df_X = df.loc[:, df.columns != 'diabetes']
 df_y = df['diabetes']
@@ -73,7 +73,7 @@ from sklearn.model_selection import cross_val_score
 import pandas as pd
 
 
-df = pd.read_csv("[DKU]DeepLearning_Cloud\PimaIndiansDiabetes.csv")
+df = pd.read_csv("DeepLearning_Cloud\PimaIndiansDiabetes.csv")
 
 df_X = df.loc[:, df.columns != 'diabetes']
 df_y = df['diabetes']
