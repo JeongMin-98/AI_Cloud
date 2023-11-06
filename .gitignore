@@ -8,11 +8,11 @@
 #DKU file
 
 AzureCloud/..
-[DKU]DeepLearning_Cloud/TrainPlot.py
+DeepLearning_Cloud/TrainPlot.py
 
-[DKU]DeepLearning_Cloud/*.csv
-[DKU]DeepLearning_Cloud/*.png
-[DKU]DeepLearning_Cloud/*.txt
+DeepLearning_Cloud/*.csv
+DeepLearning_Cloud/*.png
+DeepLearning_Cloud/*.txt
 
 NAVER_AI_STUDY/
 
@@ -23,7 +23,9 @@ exportToHTML/
 *.dot
 
 ## Dataset
-[DKU]DeepLearning_Cloud/기말과제/dataset2/
+PytorchTutorial/dataSet/imageSet2/*.jpg
+PytorchTutorial/dataSet/imageSet2/*.jpeg
+DeepLearning_Cloud/final/dataset2/
 # User-specific stuff
 .idea
 .idea/**/workspace.xml
