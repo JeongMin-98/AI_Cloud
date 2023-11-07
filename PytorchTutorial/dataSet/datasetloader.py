@@ -3,14 +3,6 @@ import pandas as pd
 from torch.utils.data import dataloader
 from torch.utils.data import Dataset
 from torchvision.io import read_image
-from sklearn.model_selection import train_test_split
-
-
-def split_data(data, train_ratio=0.8, eval_ratio=0.2):
-    train_data, eval_data = train_test_split(data, train_size=train_ratio, test_size=eval_ratio)
-    train_loader = dataloader.DataLoader(train_data, batch_size=1, shuffle=True)
-    eval_loader = dataloader.DataLoader(eval_data, batch_size=1, shuffle=True)
-    return train_loader, eval_loader
 
 
 class CustomImageDataSet(Dataset):

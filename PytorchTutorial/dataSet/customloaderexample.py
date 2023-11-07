@@ -8,8 +8,6 @@ if __name__ == '__main__':
                                  "./imageSet2/",
                                  get_transformations((288, 288)))
 
-
     for i in range(len(dataset)):
-        print(i)
         img_tensor, label = dataset[i]
-        # tensor2image(img_tensor)
+        tensor2image(img_tensor)
