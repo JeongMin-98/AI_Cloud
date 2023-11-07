@@ -16,7 +16,8 @@ class Trainer:
         self.running_loss = 0.
         self.running_acc = 0.
         # Define the loss function
-        self.loss_fn = nn.NLLLoss()
+        self.loss_fn = nn.CrossEntropyLoss()
+        # self.loss_fn = nn.NLLLoss()
         # Define optimizer (Adam)
         self.optimizer = Adam(model.parameters(), lr=0.001)
 
@@ -55,13 +56,13 @@ class Trainer:
                 images = images.to(self.device)
                 labels = torch.tensor(labels)
                 # Convert labels to One-Hot Encoding
-                labels_one_hot = F.one_hot(labels, num_classes=4)
+                labels_one_hot = F.one_hot(labels, num_classes=4).float()
                 labels_one_hot = labels_one_hot.view(-1).to(self.device)
 
                 # zero the parameter gradients
                 self.optimizer.zero_grad()
                 # predict classes using images from the training set
-                output = self.model(images)
+                output = self.model(images).view(-1)
                 # compute the loss based on model output and real labels
                 loss = self.loss_fn(output, labels_one_hot)
                 # backpropagate ths loss

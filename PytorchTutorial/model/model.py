@@ -21,16 +21,16 @@ class MyCNN(nn.Module):
     def __init__(self):
         super().__init__()
         self.layer = nn.Sequential(
-            nn.Conv2d(in_channels=3, out_channels=16, kernel_size=(3, 3), padding_mode="zeros"),
+            nn.Conv2d(in_channels=3, out_channels=16, kernel_size=(3, 3), padding=0),
             nn.ReLU(),
             nn.MaxPool2d(kernel_size=(2, 2)),
-            nn.Conv2d(in_channels=16, out_channels=32, kernel_size=(3, 3), padding_mode="zeros"),
+            nn.Conv2d(in_channels=16, out_channels=32, kernel_size=(3, 3), padding=0),
             nn.ReLU(),
             nn.MaxPool2d(kernel_size=(2, 2)),
-            nn.Conv2d(in_channels=32, out_channels=64, kernel_size=(3, 3), padding_mode="zeros"),
+            nn.Conv2d(in_channels=32, out_channels=64, kernel_size=(3, 3), padding=0),
             nn.ReLU(),
             nn.MaxPool2d(kernel_size=(2, 2)),
-            nn.Flatten(start_dim=0),
+            nn.Flatten(start_dim=1),
             nn.Linear(in_features=73984, out_features=512),
             nn.ReLU(),
             nn.Linear(in_features=512, out_features=4),
@@ -39,7 +39,8 @@ class MyCNN(nn.Module):
 
     def forward(self, x):
         x = self.layer(x)
-        x = torch.log_softmax(x, dim=0)
+        x = F.softmax(x, dim=1)
+        # x = torch.log_softmax(x, dim=1)
         return x
 
 
