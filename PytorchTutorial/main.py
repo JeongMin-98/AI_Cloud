@@ -21,8 +21,8 @@ if __name__ == "__main__":
 
     train_dataset.dataset.transform = get_transformations()
 
-    train_loader = DataLoader(train_dataset, batch_size=1, shuffle=True)
-    eval_loader = DataLoader(eval_dataset, batch_size=1, shuffle=False)
+    train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True)
+    eval_loader = DataLoader(eval_dataset, batch_size=32, shuffle=False)
 
     trainer = Trainer(model=model, train_loader=train_loader, eval_loader=eval_loader, device=device)
     epochs = 10

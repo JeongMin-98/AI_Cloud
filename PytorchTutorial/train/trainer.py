@@ -57,12 +57,13 @@ class Trainer:
                 labels = torch.tensor(labels)
                 # Convert labels to One-Hot Encoding
                 labels_one_hot = F.one_hot(labels, num_classes=4).float()
-                labels_one_hot = labels_one_hot.view(-1).to(self.device)
-
+                # labels_one_hot = labels_one_hot.view(-1).to(self.device)
+                labels_one_hot = labels_one_hot.to(self.device)
                 # zero the parameter gradients
                 self.optimizer.zero_grad()
                 # predict classes using images from the training set
-                output = self.model(images).view(-1)
+                # output = self.model(images).view(-1)
+                output = self.model(images)
                 # compute the loss based on model output and real labels
                 loss = self.loss_fn(output, labels_one_hot)
                 # backpropagate ths loss
@@ -72,10 +73,11 @@ class Trainer:
 
                 # Print statistics
                 self.running_loss += loss.item()
-                if idx % 100 == 99:
-                    print('[%d, %5d] loss : %.4f' %
-                          (epoch + 1, idx + 1, self.running_loss / 100))
-                    self.running_loss = 0.
+
+                # if idx % 32 == 31:
+                print('[%d, %5d] loss : %.4f' %
+                      (epoch + 1, idx + 1, self.running_loss / 100))
+                self.running_loss = 0.
 
             # Compute and Print the average accuracy for this epoch
             accuracy = self.test_accuracy()

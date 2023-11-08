@@ -20,6 +20,9 @@ def check_device():
 class MyCNN(nn.Module):
     def __init__(self):
         super().__init__()
+        self.data_augmentation = nn.Sequential(
+
+        )
         self.layer = nn.Sequential(
             nn.Conv2d(in_channels=3, out_channels=16, kernel_size=(3, 3), padding=0),
             nn.ReLU(),

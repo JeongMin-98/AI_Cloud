@@ -15,9 +15,8 @@ def get_transformations(size=(288, 288)):
     """
     data_transform = tf.Compose([
         # tf.Resize(size=(288, 288), interpolation=InterpolationMode.BILINEAR),
-        # RandomHorizontalFlip(),
-        # RandomRotation(15),
-        DataAug(),
+        RandomHorizontalFlip(),
+        RandomRotation(15),
         ResizeImage(new_size=size),
         ToFloatTensor(),
     ])
@@ -84,19 +83,21 @@ class ImgAug(object):
 
     def __call__(self, data):
         image, label = data
-
+        # Convert tensor to numpy ndarray
+        image = np.array(image)
         # apply image augmentation
         image = self.augmentations(image=image)
 
         return image, label
 
 
-class DataAug(ImgAug):
-    def __init__(self):
-        super().__init__()
-        self.augmentations = iaa.Sequential([
-            iaa.Sharpen(0.0, 0.1),
-            iaa.Affine(rotate=(-0, 0),
-                       translate_percent=(-0.1, 0.1),
-                       scale=(0.8, 1.5)),
-        ])
+# Don't use Image Aug
+# class DataAug(ImgAug):
+#     def __init__(self):
+#         super().__init__()
+#         self.augmentations = iaa.Sequential([
+#             iaa.Sharpen(0.0, 0.1),
+#             iaa.Affine(rotate=(-0, 0),
+#                        translate_percent=(-0.1, 0.1),
+#                        scale=(0.8, 1.5)),
+#         ])
