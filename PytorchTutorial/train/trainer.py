@@ -21,6 +21,10 @@ class Trainer:
         # Define optimizer (Adam)
         self.optimizer = Adam(model.parameters(), lr=0.001)
 
+    def save_model(self):
+        path = "./pth/bestmodel.pth"
+        torch.save(self.model.state_dict(), path)
+
     def test_accuracy(self):
         self.model.eval()
         accuracy = 0.
@@ -42,6 +46,8 @@ class Trainer:
         # Print execution device
         print("The model will be running on ", self.device, "device")
 
+        # declare the best accuracy
+        best_accuracy = 0.0
         # In main.py Already Converted model parameters and buffers to Device.
         self.model.train()
 
@@ -51,7 +57,6 @@ class Trainer:
             self.running_acc = 0.
 
             for idx, (images, labels) in enumerate(self.train_loader):
-
                 # get the inputs
                 images = images.to(self.device)
                 labels = torch.tensor(labels)
@@ -76,7 +81,7 @@ class Trainer:
 
                 # if idx % 32 == 31:
                 print('[%d, %5d] loss : %.4f' %
-                      (epoch + 1, idx + 1, self.running_loss / 100))
+                      (epoch + 1, idx + 1, self.running_loss))
                 self.running_loss = 0.
 
             # Compute and Print the average accuracy for this epoch
@@ -84,3 +89,6 @@ class Trainer:
             print("For Epoch", epoch + 1, "the test accuracy over the test set is %d %%" % (accuracy))
 
             # if the accuracy is the best, Save the model.
+            if accuracy > best_accuracy:
+                self.save_model()
+                best_accuracy = accuracy
