@@ -4,18 +4,7 @@ from torch import nn
 from torch.nn import functional as F
 from torch.optim import Adam
 from utils.tensor import get_attributes_of_tensor
-
-
-def check_device():
-    device = (
-        "cuda"
-        if torch.cuda.is_available()
-        else "mps"
-        if torch.backends.mps.is_available()
-        else "cpu"
-    )
-    return device
-
+from utils.tools import check_device
 
 class MyCNN(nn.Module):
     def __init__(self):
