@@ -30,3 +30,20 @@ class MyVgg(nn.Module):
             pass
 
         return None
+
+    def set_layer(self):
+        """ set layer from configuration file """
+        module_list = nn.ModuleList()
+
+        # Input size
+        # pass
+
+        for idx, info in enumerate(config):
+            modules = nn.Sequential()
+
+            if info['type'] == "convolutional":
+                filters = int(info['filters'])
+                modules = self._add_conv2d_layer(idx, modules, info, in_channels[-1], True)
+                in_channels.append(in_channels[-1])
+            elif info["type"] == "maxpool":
+                modules.add_module("max pool", nn.MaxPool2d(kernel_size=info["size"], stride=info["stride"]))
