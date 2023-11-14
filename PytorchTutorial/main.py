@@ -2,6 +2,7 @@ import torch
 from torch.utils.data import DataLoader, random_split
 from torchsummary import summary
 from model import model
+from model import VGG
 from model.model import check_device
 from dataSet import datasetloader
 from dataSet.data_transformer import get_transformations
@@ -14,7 +15,10 @@ if __name__ == "__main__":
     # import model from config file
     config = parse_model_config("./vggnet-19.cfg")
 
-    model = model.MyCNN().to(device)
+    model = VGG.MyVgg(config)
+    model = model.to(device)
+
+    # model = model.MyCNN().to(device)
     summary(model, input_size=(3, 288, 288), batch_size=32, device=device)
     # custom_dataset = datasetloader.CustomImageDataSet(annotations_file="dataSet/imageSet/labels.csv",
     #                                                   img_dir="dataset/imageSet/")

@@ -6,44 +6,58 @@ from torch.optim import Adam
 from utils.tools import check_device
 
 
+def _add_hidden_layer(idx: int, modules, info: dict):
+    if info['activation'] == 'relu':
+        modules.add_module('layer_' + str(idx) + '_activation',
+                           nn.ReLU())
+
+
 class MyVgg(nn.Module):
 
-    def __init__(self, num_classes=4, config):
+    def __init__(self, config, num_classes=4):
         super().__init__()
+        self.input_image_channel = 3
         self.config = config
         self.num_classes = num_classes
-        self.conv_layer = self._make_conv_layer(self.config)
-        self.fully_connected_layer = nn.Sequential([
-            nn.Linear(in_features=512, out_features=4096),
-            nn.Linear(in_features=4096, out_features=4096),
-            nn.Linear(in_features=4096, out_features=self.num_classes),
-        ])
-        self.softmax = nn.softmax()
+        self.conv_layer = self.set_layer()
+        self.softmax = nn.Softmax()
 
-    def _make_conv_layer(self, info: dict):
-        conv_layer = nn.Sequential()
-        for key, item in info.items():
-            # idx => 1, key [stride, padding, in_channels, out_channels]
-            # max pooling layer => ~
-            # conv_layer.append(conv2D(stride, padding, in_channels, out_channels))
-            # conv_layer
-            pass
+    def _add_conv2d_layer(self, idx: int, modules, info: dict, in_channel, batch_normalizations=True):
 
-        return None
+        # init Layer info
+        filters = int(info['filters'])
+        size = int(info['size'])
+        stride = int(info['stride'])
+        padding = int(info['padding'])
+
+        modules.append(nn.Conv2d(in_channel,
+                                 filters,
+                                 size,
+                                 stride,
+                                 padding,
+                                 ))
+
+        if info['batch_normalize'] == '1':
+            modules.append(nn.BatchNorm2d(filters))
+
+        _add_hidden_layer(idx, modules, info)
+
+        return modules
 
     def set_layer(self):
         """ set layer from configuration file """
         module_list = nn.ModuleList()
+        in_channels = [self.input_image_channel]
 
-        # Input size
-        # pass
-
-        for idx, info in enumerate(config):
+        for idx, info in enumerate(self.config):
             modules = nn.Sequential()
 
             if info['type'] == "convolutional":
                 filters = int(info['filters'])
                 modules = self._add_conv2d_layer(idx, modules, info, in_channels[-1], True)
-                in_channels.append(in_channels[-1])
+                in_channels.append(filters)
             elif info["type"] == "maxpool":
-                modules.add_module("max pool", nn.MaxPool2d(kernel_size=info["size"], stride=info["stride"]))
+                modules.add_module("layer_" + str(idx) + "_MaxPooling Layer",
+                                   nn.MaxPool2d(kernel_size=info["size"], stride=info["stride"]))
+            module_list.append(modules)
+        return module_list

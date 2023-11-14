@@ -10,7 +10,7 @@ from io import BytesIO
 # 500 서버 에러
 
 vision_base_url = 'https://danuser6computervision.cognitiveservices.azure.com/vision/v2.0/'
-
+.
 vision_base_url += 'analyze'
 
 image_url = 'https://www.dankook.ac.kr/html_portlet_repositories/images/ExtImgFile/10158/10185/343623/59734.jpg'
