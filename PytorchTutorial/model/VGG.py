@@ -72,13 +72,13 @@ class MyVgg(nn.Module):
 
         # Forward Conv layer
         for idx, layer in enumerate(self.conv_layer):
-            print(idx, layer)
+            # print(idx, layer)
             x = layer(x)
-            print(x.shape)
-        print(x.shape)
+            # print(x.shape)
+        # print(x.shape)
         # Forward Fully Connected Layer
         x = self.flatten_layer(x)
-        print(x.shape)
+        # print(x.shape)
         x = self.fully_connected_layer(x)
 
         # Forward SoftMax
