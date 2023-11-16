@@ -20,6 +20,12 @@ class MyVgg(nn.Module):
         self.config = config
         self.num_classes = num_classes
         self.conv_layer = self.set_layer()
+        self.flatten_layer = nn.Flatten(start_dim=1)
+        self.fully_connected_layer = nn.Sequential(
+            nn.Linear(in_features=512*7*7, out_features=4096),
+            nn.Linear(in_features=4096, out_features=4096),
+            nn.Linear(in_features=4096, out_features=num_classes)
+        )
         self.softmax = nn.Softmax()
 
     def _add_conv2d_layer(self, idx: int, modules, info: dict, in_channel, batch_normalizations=True):
@@ -57,7 +63,25 @@ class MyVgg(nn.Module):
                 modules = self._add_conv2d_layer(idx, modules, info, in_channels[-1], True)
                 in_channels.append(filters)
             elif info["type"] == "maxpool":
-                modules.add_module("layer_" + str(idx) + "_MaxPooling Layer",
-                                   nn.MaxPool2d(kernel_size=info["size"], stride=info["stride"]))
+                modules.append(
+                    nn.MaxPool2d(kernel_size=int(info["size"]), stride=int(info["stride"])))
             module_list.append(modules)
         return module_list
+
+    def forward(self, x):
+
+        # Forward Conv layer
+        for idx, layer in enumerate(self.conv_layer):
+            print(idx, layer)
+            x = layer(x)
+            print(x.shape)
+        print(x.shape)
+        # Forward Fully Connected Layer
+        x = self.flatten_layer(x)
+        print(x.shape)
+        x = self.fully_connected_layer(x)
+
+        # Forward SoftMax
+        x = self.softmax(x)
+
+        return x

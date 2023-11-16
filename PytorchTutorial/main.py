@@ -18,8 +18,9 @@ if __name__ == "__main__":
     model = VGG.MyVgg(config)
     model = model.to(device)
 
+    summary(model, (3, 224, 224))
     # model = model.MyCNN().to(device)
-    summary(model, input_size=(3, 288, 288), batch_size=32, device=device)
+    # summary(model, input_size=(3, 224, 224), device=device)
     # custom_dataset = datasetloader.CustomImageDataSet(annotations_file="dataSet/imageSet/labels.csv",
     #                                                   img_dir="dataset/imageSet/")
     # data_loader = DataLoader(custom_dataset, batch_size=1, shuffle=True)
