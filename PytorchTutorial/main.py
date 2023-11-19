@@ -1,5 +1,5 @@
 from torchinfo import summary
-
+from dataSet import datasetloader
 from model import VGG
 from model.model import check_device
 from utils.tools import parse_model_config
@@ -14,7 +14,7 @@ if __name__ == "__main__":
     model = model.to(device)
 
     # test
-    test = True
+    test = False
     if test:
         summary(model, input_size=(64, 3, 224, 224), device=device)
 
