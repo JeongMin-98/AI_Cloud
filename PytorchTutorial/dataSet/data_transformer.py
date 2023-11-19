@@ -1,5 +1,4 @@
 import numpy as np
-import torch
 # import imgaug as ia
 # from imgaug import augmenters as iaa
 from torchvision import transforms as tf

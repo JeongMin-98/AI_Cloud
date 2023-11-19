@@ -1,7 +1,6 @@
+from data_transformer import get_transformations
 from datasetloader import CustomImageDataSet
 from showImage.utils import *
-from utils.tensor import get_attributes_of_tensor
-from data_transformer import get_transformations
 
 if __name__ == '__main__':
     dataset = CustomImageDataSet("./imageSet2/labels.csv",

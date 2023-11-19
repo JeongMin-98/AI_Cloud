@@ -1,10 +1,10 @@
-import os
 import torch
 from torch import nn
 from torch.nn import functional as F
-from torch.optim import Adam
+
 from utils.tensor import get_attributes_of_tensor
 from utils.tools import check_device
+
 
 class MyCNN(nn.Module):
     def __init__(self):
