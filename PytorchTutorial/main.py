@@ -1,5 +1,7 @@
+from torch.utils.data import DataLoader, random_split
 from torchinfo import summary
 from dataSet import datasetloader
+from dataSet.data_transformer import get_transformations
 from model import VGG
 from model.model import check_device
 from utils.tools import parse_model_config
